@@ -1,5 +1,5 @@
 # NeuroGuard — MQTT IoT AI Defender Simulation
-### NS-3 + CNN-BiLSTM-Attention IDS/IPS
+### NS-3 + CNN-BiLSTM-Attention
 
 ---
 
