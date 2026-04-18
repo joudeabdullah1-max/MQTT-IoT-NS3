@@ -16,12 +16,12 @@
  *     7   10.0.0.8     ATTACKER  (DDoS agent)
  *     8   10.0.0.9     AI DEFENDER (CNN-BiLSTM-Attn IDS/IPS)
  *
- * ATTACK MODES (CTGAN-matched):
- *   0 SYN    — rapid TCP SYN flood                  delta=1.709s
- *   1 BASIC  — standard MQTT CONNECT flood          delta=0.476s
- *   2 DELAY  — slow CONNECT, delay before payload   delta=0.890s
- *   3 INVSUB — MQTT SUBSCRIBE with invalid topic    delta=0.751s
- *   4 WILL   — MQTT CONNECT with large WILL payload delta=0.490s
+ * ATTACK MODES:
+ *   0 SYN    — rapid TCP SYN flood                  
+ *   1 BASIC  — standard MQTT CONNECT flood         
+ *   2 DELAY  — slow CONNECT, delay before payload   
+ *   3 INVSUB — MQTT SUBSCRIBE with invalid topic    
+ *   4 WILL   — MQTT CONNECT with large WILL payload 
  *
  * DEFENDER ACTIONS (mirrors your Python rl_env.py):
  *   0  ALLOW             — pass traffic normally
@@ -55,17 +55,12 @@
  *        — rate-limit / block: closes or throttles attacker socket at broker
  *        — alert-only: logs to defender_log.csv
  *        — allow: does nothing
- *     5. Updates NetAnim node colours to show the live defence state:
- *        Green  = ALLOW / no threat detected
- *        Orange = ALERT / light mitigation (RATE_LIMIT, DELAY, REDUCE_QOS...)
- *        Red    = ACTIVE BLOCK (TEMP/PERM/DROP/DISCONNECT/QUARANTINE/ISOLATE)
  *
  * NETANIM LEGEND:
- *   🟢 Green  broker  — healthy / under no attack
+ *   🟢 Green  broker  
  *   🔵 Blue   sensors — normal IoT traffic
  *   🔴 Red    attacker — DDoS agent
- *   🟣 Purple defender — your AI IDS/IPS node
- *   Orange broker    — attack detected, mitigation active
+ *   🟣 Purple defender — our AI
  *
  * OUTPUT → defended_1broker_output/
  *   pcap/                  — wireshark captures
