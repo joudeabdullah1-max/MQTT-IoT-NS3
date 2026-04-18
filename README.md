@@ -50,8 +50,8 @@ cd ~/ns-allinone-3.46.1/ns-3.46.1/
 
 ### 1-Broker simulation (1 broker, 6 sensors, 1 attacker, 1 defender):
 ```bash
-./ns3 build scratch/mqtt_1broker_defended
-./ns3 run scratch/mqtt_1broker_defended
+./ns3 build scratch/mqtt_1broker_defended_1_
+./ns3 run scratch/mqtt_1broker_defended_1_
 ```
 Output goes to: `defended_1broker_output/`
 
@@ -93,7 +93,7 @@ Open the `.xml` file from the output folder. Press Play.
 ## Optional Parameters
 
 ```bash
-./ns3 run "scratch/mqtt_1broker_defended \
+./ns3 run "scratch/mqtt_1broker_defended_1_ \
     --simTime=180 \
     --attackStart=15 \
     --defInterval=4 \
